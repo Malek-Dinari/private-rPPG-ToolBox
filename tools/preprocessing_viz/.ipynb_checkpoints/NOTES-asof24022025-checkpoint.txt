@@ -1,0 +1,48 @@
+PROMPT0ENG
+
+
+Let's use a helix with just GCSS and compare GTCSS to the latter
+
+A simple helix by that I mean one that has the same fixed rayon (radius)
+
+My goal is to use Dynami Time Warping (DTW) to compare the 2 helices description GCSS vs GTCSS
+
+Can we use SVD or PCA (SVD is better here?) to get the eigenvectors thus the 2 primary directions one (the larger one naturally) would explain the rotation and the other one change in terms of translation, if there is any (is this tied to whether the radius changes or stays constant in the parametric expression of the helix we work with) ??
+
+In another part, I want to experiment and try wrapping a helix around objects, start with simple objects like a cone like somewhat smooth synthetic shape and get to more complex (with hidden  or golf like or hole like portions that complicate the "wrapping" of the helix around them), I know this is not going to be simple as a lot of maths is there, so if you don't give code and implementation for this yet, at least give in a tabular or list fashion types of helices analytically expressed (math formulation or function or expression is existant ?!), all in french, and how we can use them, a plan if possible for an early research workflow
+
+
+
+----
+
+
+Plan de Recherche Préliminaire pour l’Expérimentation
+Étude Bibliographique et Théorique :
+
+Revue des approches GCSS et GTCSS et compréhension approfondie des méthodes de lissage multi-échelle et des critères d’extraction des points clés.
+Analyse des méthodes de décomposition (SVD/PCA) appliquées aux signatures de courbes.
+Implémentation sur Hélice à Rayon Fixe :
+
+Génération de l’hélice classique.
+Calcul des signatures GCSS et GTCSS.
+Comparaison via DTW et analyse par SVD pour extraire les modes principaux.
+Évaluation de la robustesse de chaque descripteur en termes de rotation et de translation.
+Extension aux Hélices à Rayon Variable et Logarithmique :
+
+Implémenter les différentes formulations (tableau ci-dessus).
+Comparer l’influence de la variation du rayon sur la signature.
+Analyser comment les changements radiaux se reflètent dans les directions extraites par SVD.
+Modélisation de l’Enroulement sur Objets :
+
+Commencer par un objet simple (par exemple, un cône) et générer une hélice ajustée à sa surface.
+Étudier des cas plus complexes (formes avec trous ou surfaces non convexes).
+Développer ou adapter des algorithmes de projection qui "enroulent" la courbe sur la surface de l’objet en prenant en compte la normale locale.
+Validation Expérimentale :
+
+Comparaison des signatures obtenues pour différentes formes d’hélices.
+Utilisation de DTW pour quantifier la similarité entre descriptions et identifier les invariants robustes.
+Analyse des résultats par SVD pour interpréter les directions principales en lien avec la rotation et la translation.
+Documentation et Visualisation :
+
+Créer des outils de visualisation 3D pour observer l’hélice et son enroulement sur des objets.
+Mettre en place un pipeline reproductible (par exemple, via des notebooks Python) pour faciliter l’analyse.

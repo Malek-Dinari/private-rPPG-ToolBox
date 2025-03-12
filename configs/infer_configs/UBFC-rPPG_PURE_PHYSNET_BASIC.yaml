@@ -6,10 +6,11 @@ TEST:
   DATA:
     FS: 30
     DATASET: PURE
-    DO_PREPROCESS: False                  # if first time, should be true
+    DO_PREPROCESS: True                   # if first time, should be true
     DATA_FORMAT: NCDHW
-    DATA_PATH: "/gscratch/ubicomp/xliu0/data3/mnt/Datasets/PURE/RawData"                     # Raw dataset path, need to be updated
-    CACHED_PATH: "/gscratch/ubicomp/xliu0/data3/mnt/Datasets/rppg_toolbox/PreprocessedData"    # Processed dataset save path, need to be updated
+    DATA_PATH: "/mnt/d/Users/HP/Downloads/datasets/PURE"                     # Raw dataset path, need to be updated
+    EXCLUSION_LIST: []
+    CACHED_PATH: "/mnt/d/Users/HP/Downloads/datasets/PURE_cache"    # Processed dataset save path, need to be updated
     EXP_DATA_NAME: ""
     BEGIN: 0.0
     END: 1.0

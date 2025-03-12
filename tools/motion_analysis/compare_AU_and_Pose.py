@@ -19,8 +19,8 @@ if __name__ == "__main__":
     pose_rotations_of_interest = ['pose_Rx', 'pose_Ry', 'pose_Rz']
 
     # Define the directory where the OpenFace CSV files are located
-    input_dir = 'path/to/UBFC-rPPG'
-    compare_dir = '/path/to/MAUBFC-rPPG'
+    input_dir = '/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG'
+    compare_dir = '/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG'
 
     # Initialize empty lists to store the mean standard deviation values
     au_intensity_std_means = []

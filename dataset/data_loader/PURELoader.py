@@ -44,19 +44,35 @@ class PURELoader(BaseLoader):
         """
         super().__init__(name, data_path, config_data)
 
-    def get_raw_data(self, data_path):
-        """Returns data directories under the path(For PURE dataset)."""
 
-        data_dirs = glob.glob(data_path + os.sep + "*-*")
+    #modified to exclude subjects (1 is corrupted)
+    def get_raw_data(self, data_path):
+        """Returns correctly formatted data directories for the PURE dataset."""
+
+        data_dirs = glob.glob(os.path.join(data_path, "*-*"))  # Find all session folders
+
         if not data_dirs:
-            raise ValueError(self.dataset_name + " data paths empty!")
-        dirs = list()
+            raise ValueError(f"{self.dataset_name} data paths are empty!")
+
+        dirs = []
+        exclusion_list = self.config_data.get("EXCLUSION_LIST", [])  # Get excluded subjects
+
         for data_dir in data_dirs:
-            subject_trail_val = os.path.split(data_dir)[-1].replace('-', '')
-            index = int(subject_trail_val)
-            subject = int(subject_trail_val[0:2])
-            dirs.append({"index": index, "path": data_dir, "subject": subject})
+            base_name = os.path.basename(data_dir)  # Extracts just "01-01", "02-01", etc.
+            if not base_name.replace("-", "").isdigit():
+                print(f"Skipping unexpected folder: {data_dir}")
+                continue  # Ignore any unexpected files
+
+            subject_id, trial_id = map(int, base_name.split("-"))  # Extracts "01", "02" as integers
+
+            if subject_id in exclusion_list:
+                print(f"Skipping excluded subject: {subject_id}")
+                continue
+
+            dirs.append({"index": trial_id, "path": data_dir, "subject": subject_id})
+
         return dirs
+
 
     def split_raw_data(self, data_dirs, begin, end):
         """Returns a subset of data dirs, split with begin and end values, 

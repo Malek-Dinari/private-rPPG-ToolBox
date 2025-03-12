@@ -11,8 +11,8 @@ TRAIN:
     DATASET: UBFC-rPPG
     DO_PREPROCESS: False               # if first time, should be true
     DATA_FORMAT: NCDHW
-    DATA_PATH: "/your/path/here"                     # Raw dataset path, need to be updated
-    CACHED_PATH: "/your/path/here"    # Processed dataset save path, need to be updated
+    DATA_PATH: "/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG/DATASET_2"                     # Raw dataset path, need to be updated
+    CACHED_PATH: "/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG/DATASET_2_cache"    # Processed dataset save path, need to be updated
     EXP_DATA_NAME: ""
     BEGIN: 0.0
     END: 0.8
@@ -40,8 +40,8 @@ VALID:
     DATASET: UBFC-rPPG
     DO_PREPROCESS: False                  # if first time, should be true
     DATA_FORMAT: NCDHW
-    DATA_PATH: "/your/path/here"                     # Raw dataset path, need to be updated
-    CACHED_PATH: "/your/path/here"    # Processed dataset save path, need to be updated
+    DATA_PATH: "/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG/DATASET_2"                     # Raw dataset path, need to be updated
+    CACHED_PATH: "/mnt/d/Users/HP/Downloads/datasets/UBFC-rPPG/DATASET_2_cache"    # Processed dataset save path, need to be updated
     EXP_DATA_NAME: ""
     BEGIN: 0.8
     END: 1.0
@@ -69,10 +69,11 @@ TEST:
   DATA:
     FS: 30
     DATASET: PURE
-    DO_PREPROCESS: False                    # if first time, should be true
+    DO_PREPROCESS: True                    # if first time, should be true
     DATA_FORMAT: NCDHW
-    DATA_PATH: "/your/path/here"                     # Raw dataset path, need to be updated
-    CACHED_PATH: "/your/path/here"    # Processed dataset save path, need to be updated
+    DATA_PATH: "/mnt/d/Users/HP/Downloads/datasets/PURE/"                     # Raw dataset path, need to be updated
+    EXCLUSION_LIST: [1]
+    CACHED_PATH: "/mnt/d/Users/HP/Downloads/datasets/PURE/cache"    # Processed dataset save path, need to be updated
     EXP_DATA_NAME: ""
     BEGIN: 0.0
     END: 1.0
