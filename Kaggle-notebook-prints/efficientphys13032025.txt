@@ -1,0 +1,319 @@
+=> Merging a config file from /kaggle/working/rPPG-Toolbox/configs/infer_configs/PURE_UBFC-rPPG_EFFICIENTPHYS.yaml
+Configuration:
+BASE: ['']
+DEVICE: cuda:0
+INFERENCE:
+  BATCH_SIZE: 4
+  EVALUATION_METHOD: FFT
+  EVALUATION_WINDOW:
+    USE_SMALLER_WINDOW: False
+    WINDOW_SIZE: 10
+  MODEL_PATH: ./final_model_release/PURE_EfficientPhys.pth
+LOG:
+  PATH: runs/exp
+MODEL:
+  BIGSMALL:
+    FRAME_DEPTH: 3
+  DROP_RATE: 0.2
+  EFFICIENTPHYS:
+    FRAME_DEPTH: 10
+  FactorizePhys:
+    CHANNELS: 3
+    FRAME_NUM: 160
+    MD_FSAM: False
+    MD_INFERENCE: True
+    MD_R: 1
+    MD_RESIDUAL: True
+    MD_S: 1
+    MD_STEPS: 4
+    MD_TRANSFORM: T_KAB
+    MD_TYPE: NMF
+    TYPE: Standard
+  MODEL_DIR: runs/exp/_SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse/PreTrainedModels
+  NAME: EfficientPhys
+  PHYSFORMER:
+    DIM: 96
+    FF_DIM: 144
+    NUM_HEADS: 4
+    NUM_LAYERS: 12
+    PATCH_SIZE: 4
+    THETA: 0.7
+  PHYSNET:
+    FRAME_NUM: 64
+  RESUME: 
+  TSCAN:
+    FRAME_DEPTH: 10
+  iBVPNet:
+    CHANNELS: 3
+    FRAME_NUM: 160
+NUM_OF_GPU_TRAIN: 1
+TEST:
+  DATA:
+    BEGIN: 0.0
+    CACHED_PATH: /kaggle/working/cache/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse
+    DATASET: UBFC-rPPG
+    DATA_FORMAT: NDCHW
+    DATA_PATH: /kaggle/input/ubfc-rppg-4-samples
+    DO_PREPROCESS: True
+    END: 1.0
+    EXP_DATA_NAME: UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse
+    FILE_LIST_PATH: /kaggle/working/cache/DataFileLists/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_0.0_1.0.csv
+    FILTERING:
+      EXCLUSION_LIST: ['']
+      SELECT_TASKS: False
+      TASK_LIST: ['']
+      USE_EXCLUSION_LIST: False
+    FOLD:
+      FOLD_NAME: 
+      FOLD_PATH: 
+    FS: 30
+    INFO:
+      EXERCISE: [True]
+      GENDER: ['']
+      GLASSER: [True]
+      HAIR_COVER: [True]
+      LIGHT: ['']
+      MAKEUP: [True]
+      MOTION: ['']
+      SKIN_COLOR: [1]
+    PREPROCESS:
+      BIGSMALL:
+        BIG_DATA_TYPE: ['']
+        RESIZE:
+          BIG_H: 144
+          BIG_W: 144
+          SMALL_H: 9
+          SMALL_W: 9
+        SMALL_DATA_TYPE: ['']
+      CHUNK_LENGTH: 180
+      CROP_FACE:
+        BACKEND: HC
+        DETECTION:
+          DO_DYNAMIC_DETECTION: False
+          DYNAMIC_DETECTION_FREQUENCY: 30
+          USE_MEDIAN_FACE_BOX: False
+        DO_CROP_FACE: True
+        LARGE_BOX_COEF: 1.5
+        USE_LARGE_FACE_BOX: True
+      DATA_AUG: ['None']
+      DATA_TYPE: ['Standardized']
+      DO_CHUNK: True
+      IBVP:
+        DATA_MODE: RGB
+      LABEL_TYPE: DiffNormalized
+      RESIZE:
+        H: 72
+        W: 72
+      USE_PSUEDO_PPG_LABEL: False
+  METRICS: ['MAE', 'RMSE', 'MAPE', 'Pearson', 'SNR', 'BA']
+  OUTPUT_SAVE_DIR: runs/exp/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse/saved_test_outputs
+  USE_LAST_EPOCH: True
+TOOLBOX_MODE: only_test
+TRAIN:
+  BATCH_SIZE: 4
+  DATA:
+    BEGIN: 0.0
+    CACHED_PATH: PreprocessedData/_SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse
+    DATASET: 
+    DATA_FORMAT: NDCHW
+    DATA_PATH: 
+    DO_PREPROCESS: False
+    END: 1.0
+    EXP_DATA_NAME: _SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse
+    FILE_LIST_PATH: PreprocessedData/DataFileLists/_SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_0.0_1.0.csv
+    FILTERING:
+      EXCLUSION_LIST: ['']
+      SELECT_TASKS: False
+      TASK_LIST: ['']
+      USE_EXCLUSION_LIST: False
+    FOLD:
+      FOLD_NAME: 
+      FOLD_PATH: 
+    FS: 0
+    INFO:
+      EXERCISE: [True]
+      GENDER: ['']
+      GLASSER: [True]
+      HAIR_COVER: [True]
+      LIGHT: ['']
+      MAKEUP: [True]
+      MOTION: ['']
+      SKIN_COLOR: [1]
+    PREPROCESS:
+      BIGSMALL:
+        BIG_DATA_TYPE: ['']
+        RESIZE:
+          BIG_H: 144
+          BIG_W: 144
+          SMALL_H: 9
+          SMALL_W: 9
+        SMALL_DATA_TYPE: ['']
+      CHUNK_LENGTH: 180
+      CROP_FACE:
+        BACKEND: HC
+        DETECTION:
+          DO_DYNAMIC_DETECTION: False
+          DYNAMIC_DETECTION_FREQUENCY: 30
+          USE_MEDIAN_FACE_BOX: False
+        DO_CROP_FACE: True
+        LARGE_BOX_COEF: 1.5
+        USE_LARGE_FACE_BOX: True
+      DATA_AUG: ['None']
+      DATA_TYPE: ['']
+      DO_CHUNK: True
+      IBVP:
+        DATA_MODE: RGB
+      LABEL_TYPE: 
+      RESIZE:
+        H: 128
+        W: 128
+      USE_PSUEDO_PPG_LABEL: False
+  EPOCHS: 50
+  LR: 0.0001
+  MODEL_FILE_NAME: 
+  OPTIMIZER:
+    BETAS: (0.9, 0.999)
+    EPS: 0.0001
+    MOMENTUM: 0.9
+  PLOT_LOSSES_AND_LR: True
+UNSUPERVISED:
+  DATA:
+    BEGIN: 0.0
+    CACHED_PATH: PreprocessedData/_SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_unsupervised
+    DATASET: 
+    DATA_FORMAT: NDCHW
+    DATA_PATH: 
+    DO_PREPROCESS: False
+    END: 1.0
+    EXP_DATA_NAME: _SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_unsupervised
+    FILE_LIST_PATH: PreprocessedData/DataFileLists/_SizeW128_SizeH128_ClipLength180_DataType_DataAugNone_LabelType_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_unsupervised_0.0_1.0.csv
+    FILTERING:
+      EXCLUSION_LIST: ['']
+      SELECT_TASKS: False
+      TASK_LIST: ['']
+      USE_EXCLUSION_LIST: False
+    FOLD:
+      FOLD_NAME: 
+      FOLD_PATH: 
+    FS: 0
+    INFO:
+      EXERCISE: [True]
+      GENDER: ['']
+      GLASSER: [True]
+      HAIR_COVER: [True]
+      LIGHT: ['']
+      MAKEUP: [True]
+      MOTION: ['']
+      SKIN_COLOR: [1]
+    PREPROCESS:
+      CHUNK_LENGTH: 180
+      CROP_FACE:
+        BACKEND: HC
+        DETECTION:
+          DO_DYNAMIC_DETECTION: False
+          DYNAMIC_DETECTION_FREQUENCY: 30
+          USE_MEDIAN_FACE_BOX: False
+        DO_CROP_FACE: True
+        LARGE_BOX_COEF: 1.5
+        USE_LARGE_FACE_BOX: True
+      DATA_AUG: ['None']
+      DATA_TYPE: ['']
+      DO_CHUNK: True
+      IBVP:
+        DATA_MODE: RGB
+      LABEL_TYPE: 
+      RESIZE:
+        H: 128
+        W: 128
+      USE_PSUEDO_PPG_LABEL: False
+  METHOD: []
+  METRICS: []
+  OUTPUT_SAVE_DIR: 
+VALID:
+  DATA:
+    BEGIN: 0.0
+    CACHED_PATH: PreprocessedData
+    DATASET: 
+    DATA_FORMAT: NDCHW
+    DATA_PATH: 
+    DO_PREPROCESS: False
+    END: 1.0
+    EXP_DATA_NAME: 
+    FILE_LIST_PATH: PreprocessedData/DataFileLists
+    FILTERING:
+      EXCLUSION_LIST: ['']
+      SELECT_TASKS: False
+      TASK_LIST: ['']
+      USE_EXCLUSION_LIST: False
+    FOLD:
+      FOLD_NAME: 
+      FOLD_PATH: 
+    FS: 0
+    INFO:
+      EXERCISE: [True]
+      GENDER: ['']
+      GLASSER: [True]
+      HAIR_COVER: [True]
+      LIGHT: ['']
+      MAKEUP: [True]
+      MOTION: ['']
+      SKIN_COLOR: [1]
+    PREPROCESS:
+      BIGSMALL:
+        BIG_DATA_TYPE: ['']
+        RESIZE:
+          BIG_H: 144
+          BIG_W: 144
+          SMALL_H: 9
+          SMALL_W: 9
+        SMALL_DATA_TYPE: ['']
+      CHUNK_LENGTH: 180
+      CROP_FACE:
+        BACKEND: HC
+        DETECTION:
+          DO_DYNAMIC_DETECTION: False
+          DYNAMIC_DETECTION_FREQUENCY: 30
+          USE_MEDIAN_FACE_BOX: False
+        DO_CROP_FACE: True
+        LARGE_BOX_COEF: 1.5
+        USE_LARGE_FACE_BOX: True
+      DATA_AUG: ['None']
+      DATA_TYPE: ['']
+      DO_CHUNK: True
+      IBVP:
+        DATA_MODE: RGB
+      LABEL_TYPE: 
+      RESIZE:
+        H: 128
+        W: 128
+      USE_PSUEDO_PPG_LABEL: False
+
+Preprocessing dataset...
+  0%|                                                     | 0/4 [00:00<?, ?it/s]Warning: More than one faces are detected. Only cropping the biggest one.
+Warning: More than one faces are detected. Only cropping the biggest one.
+100%|█████████████████████████████████████████████| 4/4 [00:46<00:00, 11.57s/it]
+Total Number of raw files preprocessed: 4
+
+Cached Data Path /kaggle/working/cache/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse
+
+File List Path /kaggle/working/cache/DataFileLists/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse_0.0_1.0.csv
+ test Preprocessed Dataset Length: 44
+
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+
+===Testing===
+Testing uses pretrained model!
+Running model evaluation on the testing dataset!
+100%|███████████████████████████████████████████| 11/11 [00:50<00:00,  4.60s/it]
+
+Calculating metrics!
+100%|█████████████████████████████████████████████| 4/4 [00:04<00:00,  1.06s/it]
+FFT MAE (FFT Label): 2.4169921875 +/- 1.848186457169757
+FFT RMSE (FFT Label): 4.416449247562891 +/- 4.082841824334103
+FFT MAPE (FFT Label): 2.7314814814814814 +/- 2.1067358413787414
+FFT Pearson (FFT Label): 0.9846984207425501 +/- 0.12322544418083434
+FFT SNR (FFT Label): -1.7979780774076732 +/- 1.228063721954433 (dB)
+Saved PURE_EfficientPhys_UBFC-rPPG_FFT_BlandAltman_ScatterPlot.pdf to runs/exp/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse/bland_altman_plots.
+Saved PURE_EfficientPhys_UBFC-rPPG_FFT_BlandAltman_DifferencePlot.pdf to runs/exp/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse/bland_altman_plots.
+Saving outputs to: runs/exp/UBFC-rPPG_SizeW72_SizeH72_ClipLength180_DataTypeStandardized_DataAugNone_LabelTypeDiffNormalized_Crop_faceTrue_BackendHC_Large_boxTrue_Large_size1.5_Dyamic_DetFalse_det_len30_Median_face_boxFalse/saved_test_outputs/PURE_EfficientPhys_UBFC-rPPG_outputs.pickle
